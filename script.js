@@ -1,70 +1,67 @@
-var teams = [
-  {
-    team: "CSK",
-    primary: "#f9d616",
-    secondary: "#1a237e",
-    fullName: "Chennai Super Kings",
-    trophies: 5,
-    captain: "MS Dhoni"
-  },
-    {
-    team: "PBKS",
-    primary: "#f91630ff",
-    secondary: "#1a237e",
-    fullName: "Punjab Kings",
-    trophies: 0,
-    captain: "Shreyas Iyer"
-  },
-  {
-    team: "RCB",
-    primary: "#d53200e8",
-    secondary: "#000000",
-    fullName: "Royal Challengers Bangalore",
-    trophies: 1,
-    captain: "Faf du Plessis"
-  },
-  {
-    team: "MI",
-    primary: "#1f00eaff",
-    secondary: "#ffd600",
-    fullName: "Mumbai Indians",
-    trophies: 5,
-    captain: "Hardik Pandya"
-  },
-  {
-    team: "KKR",
-    primary: "#4a148c",
-    secondary: "#ffca28",
-    fullName: "Kolkata Knight Riders",
-    trophies: 3,
-    captain: "Shreyas Iyer"
-  }
-];
+var btn = document.querySelector('button')
 
-// Element Selection
-var btn = document.querySelector("button");
-var h1 = document.querySelector("h1");
-var main = document.querySelector("main");
+var main = document.querySelector('main')
+var arr = ['Hey ! I am Versha ','sheryians is Best','sarthak bhaiya is Best','Harsh bhaiya is Best']
+ btn.addEventListener('click',function(){
+var h1 = document.createElement('h1')
+var x = Math.random()*80
+var y = Math.random()*80
+var rot = Math.random()*360
+var scl = Math.random()*4
+var a = Math.floor(Math.random()*arr.length)
 
-// Button Click
-btn.addEventListener("click", function () {
-  var num = Math.floor(Math.random() * teams.length);
-  var winner = teams[num];
+h1.innerHTML = arr[a]
+h1.style.position = 'absolute'
 
-  // Update Heading Text
-  h1.innerHTML = `IPL 2026 Winner🎉: ${winner.team}`;
+h1.style.left = x+'%'
+h1.style.top = y+'%'
+h1.style.rotate = rot+'deg'
+h1.style.scale = scl
 
-  // Apply Styles Smoothly
-  h1.style.background = `linear-gradient(135deg, ${winner.secondary}, ${winner.primary})`;
-  h1.style.boxShadow = `0 5px 20px ${winner.primary}`;
+main.appendChild(h1)
 
-  main.style.backgroundColor = winner.primary;
-  main.style.transition = "0.5s ease";
+//     var div = document.createElement('div')
 
-  // Extra info add
-  document.querySelector("#info").innerHTML = `
-       <p><strong>Full Name:</strong> ${winner.fullName}</p>
-       <p><strong>Captain:</strong> ${winner.captain}</p>
-       <p><strong>Trophies:</strong> ${winner.trophies}</p>
-  `;
-});
+//      var x = Math.random()*100
+//     var y = Math.random()*100
+//     var r = Math.random()*360
+//      var c1 = Math.floor(Math.random()*256)
+//        var c2 = Math.floor(Math.random()*256)
+//          var c3 = Math.floor(Math.random()*256)
+
+
+//     div.style.height = '50px'
+//     div.style.width = '50px'
+//      div.style.position = 'absolute'
+//      div.style.backgroundColor = `rgb(${c1},${c2},${c3})`
+
+//      div.style.left = x+'%'
+//      div.style.top = y+'%'
+//       div.style.rotate = r+ 'deg'
+
+//     main.appendChild(div)
+})
+
+
+// var btn = document.createElement('button')
+
+// btn.innerHTML= 'download'
+
+// btn.style.color ='red'
+// var main = document.querySelector('main')
+
+// main.appendChild (btn)
+
+
+
+
+
+
+
+
+//     var h1 = document.createElement('h1')
+
+//     h1.innerHTML = 'Hello From js'
+//   var main =  document.querySelector('main')
+
+// main.appendChild(h1)
