@@ -31,7 +31,7 @@ body{
   width: 100% ;
   object-fit: cover;
   object-position: center;
-  border-radius: 20px;
+  border-radius: 21px;
 }
 #card h1{
   font-size: 30px;
