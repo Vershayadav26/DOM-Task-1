@@ -7,65 +7,76 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+ <h1>Virtual Piano Keyboard</h1>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Virtual Piano Keyboard</h1>
-
-    <div class="controls">
-      <button>Real Keys</button>
-      <button>Sustain</button>
-      <button>Letter Notes</button>
-      <button>Metronome</button>
-      <button>Zoom Out</button>
-    </div>
-  </header>
-
+<!-- CONTROLS (NO CHANGE) -->
+<div class="controls">
+  <div class="control">🎹<br>Real Keys</div>
+  <div class="control">📶<br>Sustain</div>
+  <div class="control">A<br>Letter Notes</div>
+  <div class="control">⏱<br>Metronome</div>
+  <div class="control">🔍<br>Zoom Out</div>
+</div>
   <!-- EMPTY BLACK AREA (LIKE ONLINEPIANIST) -->
-  <section class="play-area"></section>
+  <div class="piano-container">
+  <div class="piano">
 
-  <!-- PIANO -->
-  <section class="piano-wrapper">
-    <div class="piano">
-
-      <!-- WHITE KEYS -->
-      <div class="white">Q</div>
-      <div class="white">W</div>
-      <div class="white">E</div>
-      <div class="white">R</div>
-      <div class="white">T</div>
-      <div class="white">Y</div>
-      <div class="white">U</div>
-      <div class="white">I</div>
-      <div class="white">O</div>
-      <div class="white">P</div>
-      <div class="white">A</div>
-      <div class="white">S</div>
-      <div class="white">D</div>
-      <div class="white">F</div>
-      <div class="white">G</div>
-      <div class="white">H</div>
-      <div class="white">J</div>
-      <div class="white">K</div>
-      <div class="white">L</div>
-
-      <!-- BLACK KEYS -->
-      <div class="black b1">2</div>
-      <div class="black b2">3</div>
-      <div class="black b3">5</div>
-      <div class="black b4">6</div>
-      <div class="black b5">7</div>
-      <div class="black b6">9</div>
-      <div class="black b7">0</div>
-      <div class="black b8">Z</div>
-      <div class="black b9">X</div>
-      <div class="black b10">C</div>
-      <div class="black b11">V</div>
-      <div class="black b12">B</div>
-
+    <!-- LEFT BLANK KEYS (7) -->
+    <div class="octave blank">
+      <div class="white"></div>
+      <div class="black b1"></div>
+      <div class="white"></div>
+      <div class="black b2"></div>
+      <div class="white"></div>
+      <div class="black b3"></div>
+      <div class="white"></div>
+      <div class="white"></div>
+      <div class="black b4"></div>
+      <div class="white"></div>
+      <div class="black b5"></div>
+      <div class="white"></div>
     </div>
-  </section>
 
+    <!-- CENTER KEYS (MAIN) -->
+    <div class="octave">
+      <div class="white" data-key="q">Q</div>
+      <div class="black b1" data-key="2">2</div>
+
+      <div class="white" data-key="w">W</div>
+      <div class="black b2" data-key="3">3</div>
+
+      <div class="white" data-key="e">E</div>
+
+      <div class="white" data-key="r">R</div>
+      <div class="black b3" data-key="5">5</div>
+
+      <div class="white" data-key="t">T</div>
+      <div class="black b4" data-key="6">6</div>
+
+      <div class="white" data-key="y">Y</div>
+      <div class="black b5" data-key="7">7</div>
+
+      <div class="white" data-key="u">U</div>
+    </div>
+
+    <!-- RIGHT BLANK KEYS (7) -->
+    <div class="octave blank">
+      <div class="white"></div>
+      <div class="black b1"></div>
+      <div class="white"></div>
+      <div class="black b2"></div>
+      <div class="white"></div>
+      <div class="black b3"></div>
+      <div class="white"></div>
+      <div class="white"></div>
+      <div class="black b4"></div>
+      <div class="white"></div>
+      <div class="black b5"></div>
+      <div class="white"></div>
+    </div>
+
+  </div>
+</div>
   <script src="script.js"></script>
 </body>
 </html>
