@@ -2,81 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Virtual Piano</title>
+
+  <!-- Link CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
- <h1>Virtual Piano Keyboard</h1>
 
-<!-- CONTROLS (NO CHANGE) -->
-<div class="controls">
-  <div class="control">🎹<br>Real Keys</div>
-  <div class="control">📶<br>Sustain</div>
-  <div class="control">A<br>Letter Notes</div>
-  <div class="control">⏱<br>Metronome</div>
-  <div class="control">🔍<br>Zoom Out</div>
-</div>
-  <!-- EMPTY BLACK AREA (LIKE ONLINEPIANIST) -->
-  <div class="piano-container">
-  <div class="piano">
+  <main class="app">
+    <h1 class="title"> Virtual Piano Keyboard</h1>
 
-    <!-- LEFT BLANK KEYS (7) -->
-    <div class="octave blank">
-      <div class="white"></div>
-      <div class="black b1"></div>
-      <div class="white"></div>
-      <div class="black b2"></div>
-      <div class="white"></div>
-      <div class="black b3"></div>
-      <div class="white"></div>
-      <div class="white"></div>
-      <div class="black b4"></div>
-      <div class="white"></div>
-      <div class="black b5"></div>
-      <div class="white"></div>
+    <!-- Piano Container -->
+    <div class="piano">
+
+      <!-- White Keys -->
+      <div class="key white" data-note="C" data-key="a">A</div>
+      <div class="key white" data-note="D" data-key="s">S</div>
+      <div class="key white" data-note="E" data-key="d">D</div>
+      <div class="key white" data-note="F" data-key="f">F</div>
+      <div class="key white" data-note="G" data-key="g">G</div>
+      <div class="key white" data-note="A" data-key="h">H</div>
+      <div class="key white" data-note="B" data-key="j">J</div>
+
+      <!-- Black Keys -->
+      <div class="key black" data-note="C#" data-key="w">W</div>
+      <div class="key black" data-note="D#" data-key="e">E</div>
+      <div class="key black" data-note="F#" data-key="t">T</div>
+      <div class="key black" data-note="G#" data-key="y">Y</div>
+      <div class="key black" data-note="A#" data-key="u">U</div>
+
     </div>
+  </main>
 
-    <!-- CENTER KEYS (MAIN) -->
-    <div class="octave">
-      <div class="white" data-key="q">Q</div>
-      <div class="black b1" data-key="2">2</div>
-
-      <div class="white" data-key="w">W</div>
-      <div class="black b2" data-key="3">3</div>
-
-      <div class="white" data-key="e">E</div>
-
-      <div class="white" data-key="r">R</div>
-      <div class="black b3" data-key="5">5</div>
-
-      <div class="white" data-key="t">T</div>
-      <div class="black b4" data-key="6">6</div>
-
-      <div class="white" data-key="y">Y</div>
-      <div class="black b5" data-key="7">7</div>
-
-      <div class="white" data-key="u">U</div>
-    </div>
-
-    <!-- RIGHT BLANK KEYS (7) -->
-    <div class="octave blank">
-      <div class="white"></div>
-      <div class="black b1"></div>
-      <div class="white"></div>
-      <div class="black b2"></div>
-      <div class="white"></div>
-      <div class="black b3"></div>
-      <div class="white"></div>
-      <div class="white"></div>
-      <div class="black b4"></div>
-      <div class="white"></div>
-      <div class="black b5"></div>
-      <div class="white"></div>
-    </div>
-
-  </div>
-</div>
+  <!-- Link JS -->
   <script src="script.js"></script>
 </body>
 </html>
