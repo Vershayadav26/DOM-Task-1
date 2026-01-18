@@ -1,72 +1,149 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
-  background:#000;
-  color:#fff;
-  text-align:center;
+html, body {
+  height: 100%;
+  overflow-x: hidden;      /* no horizontal scroll */
+  overflow-y: hidden;      /* no vertical scroll */
 }
 
-h1{ margin:20px 0; }
+body {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
 
-.controls{
-  display:flex;
+h1 {
+  color: rgb(8, 107, 72);
+  margin: 20px;
+  text-align: center;
+}
+
+.controls {
+   display:flex;
   justify-content:center;
   gap:10px;
   margin-bottom:20px;
   flex-wrap:wrap;
 }
-
-.controls button{
-  padding:8px 14px;
-  border:none;
-  border-radius:6px;
+.controls button {
+  background: #111;
+  color: #fff;
+  border: 1px solid #444;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
+.controls button:hover {
+  background: #1e1e1e;
+  border-color: #0fa;
+}
+.controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 
 .piano {
   display: flex;
   justify-content: center;
-  transform: scale(0.75);
-  transform-origin: top center;
+   transform: scale(0.75);
+  transform-origin: bottom center;
+  margin-top: auto;        /* push piano to bottom */
+  margin-bottom: 10px;
 }
 
-
-.octave{
+.octave {
   position: relative;
-  display:flex;
+  display: flex;
 }
 
-.key.white{
-  width:60px;
-  height:220px;
-  background:white;
-  border:1px solid #000;
-  color:black;
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-  padding-bottom:10px;
-  font-weight:bold;
+.key.white {
+  width: 60px;
+  height: 220px;
+  background: white;
+  border: 1px solid #000;
 }
 
-.key.black{
-  position:absolute;
-  width:40px;
-  height:140px;
-  background:black;
-  color:white;
-  top:0;
-  margin-left:-20px;
-  z-index:10;
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-  padding-bottom:8px;
-  font-size:13px;
+.key.black {
+  width: 40px;
+  height: 140px;
+  background: black;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+/* Generic classes for octave-1 & 5 */
+.c-sharp { left: 45px; }
+.d-sharp { left: 105px; }
+.f-sharp { left: 225px; }
+.g-sharp { left: 285px; }
+.a-sharp { left: 345px; }
+
+/* Octave 2 Black Keys Positions (based on child order) */
+.octave-2 .key.black:nth-child(8)  { left: 45px; }   /* C# */
+.octave-2 .key.black:nth-child(9)  { left: 105px; }  /* D# */
+.octave-2 .key.black:nth-child(10) { left: 225px; }  /* F# */
+.octave-2 .key.black:nth-child(11) { left: 285px; }  /* G# */
+.octave-2 .key.black:nth-child(12) { left: 345px; }  /* A# */
+
+/* Octave 3 black keys (first–fifth black inside octave-3) */
+.octave-3 .key.black:nth-of-type(1) { left: 45px; }
+.octave-3 .key.black:nth-of-type(2) { left: 105px; }
+.octave-3 .key.black:nth-of-type(3) { left: 225px; }
+.octave-3 .key.black:nth-of-type(4) { left: 285px; }
+.octave-3 .key.black:nth-of-type(5) { left: 345px; }
+
+/* Octave 4 black keys */
+.octave-4 .key.black:nth-of-type(1) { left: 45px; }
+.octave-4 .key.black:nth-of-type(2) { left: 105px; }
+.octave-4 .key.black:nth-of-type(3) { left: 225px; }
+.octave-4 .key.black:nth-of-type(4) { left: 285px; }
+.octave-4 .key.black:nth-of-type(5) { left: 345px; }
+
+/* Press animation */
+.key.active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Text inside keys */
+.key.white,
+.key.black {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.key.white {
+  color: #000;
+}
+
+.key.black {
+  color: #fff;
+}
+
+/* Optional: smaller keys for smaller screens */
+@media (max-width: 1366px) {
+  .key.white {
+    width: 50px;
+    height: 200px;
+  }
+  .key.black {
+    width: 34px;
+    height: 130px;
+  }
 }
 
 .octave .black:nth-of-type(8){left:45px;}
@@ -76,5 +153,17 @@ h1{ margin:20px 0; }
 .octave .black:nth-of-type(12){left:345px;}
 
 .key.active{
-  background:rgb(87, 220, 153) !important;
+  background:rgb(35, 131, 167) !important;
+}
+.key.white {
+  position: relative;
+  z-index: 1;
+  align-items: flex-end;
+  padding-bottom: 12px;
+}
+
+.key.black {
+  z-index: 3;
+  align-items: flex-end;
+  padding-bottom: 8px;
 }
