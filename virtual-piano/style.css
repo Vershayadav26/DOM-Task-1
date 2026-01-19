@@ -41,6 +41,7 @@ h1 {
   cursor: pointer;
   font-size: 14px;
   transition: all 0.2s ease;
+
 }
 .controls button:hover {
   background: #1e1e1e;
@@ -167,3 +168,14 @@ h1 {
   align-items: flex-end;
   padding-bottom: 8px;
 }
+
+
+.piano {
+  transition: transform 0.3s ease;
+}
+
+.controls button {
+  cursor: pointer;
+}
+
+/* ho gya end */
