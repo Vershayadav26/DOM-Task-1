@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #1e1e1e;
+  color: white;
+}
+
+.editor {
+  display: flex;
+  height: 100vh;
+}
+
+/* Toolbar */
+.toolbar {
+  width: 160px;
+  background: #111;
+  padding: 10px;
+}
+
+.toolbar button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+/* Canvas */
+#canvas {
+  flex: 1;
+  background: #2a2a2a;
+  position: relative;
+}
+
+/* Elements */
+.element {
+  position: absolute;
+  cursor: move;
+}
+
+.selected {
+  outline: 2px solid #0d99ff;
+}
+
+/* Right panel */
+.panel {
+  width: 220px;
+  background: #111;
+  padding: 10px;
+}
+
+.panel label {
+  display: block;
+  margin-top: 10px;
+}
+
+.panel input {
+  width: 100%;
+}
+
+/* Resize dots */
+.resize-handle {
+  width: 8px;
+  height: 8px;
+  background: white;
+  position: absolute;
+}
+
+.top-left { top: -4px; left: -4px; cursor: nwse-resize; }
+.top-right { top: -4px; right: -4px; cursor: nesw-resize; }
+.bottom-left { bottom: -4px; left: -4px; cursor: nesw-resize; }
+.bottom-right { bottom: -4px; right: -4px; cursor: nwse-resize; }

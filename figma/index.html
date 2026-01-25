@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Figma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="editor">
+
+  <!-- Left tools -->
+  <div class="toolbar">
+    <h3>Tools</h3>
+    <button id="addRect">Rectangle</button>
+    <button id="addText">Text</button>
+    <button id="exportJSON">Export JSON</button>
+  </div>
+
+  <!-- Canvas -->
+  <div id="canvas"></div>
+
+  <!-- Properties -->
+  <div class="panel">
+    <h3>Properties</h3>
+
+    <label>Width</label>
+    <input type="number" id="propWidth">
+
+    <label>Height</label>
+    <input type="number" id="propHeight">
+
+    <label>Rotation</label>
+    <input type="range" id="propRotate" min="0" max="360">
+
+    <label>Color</label>
+    <input type="color" id="propColor">
+
+    <label>Text</label>
+    <input type="text" id="propText">
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
